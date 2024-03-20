@@ -1,0 +1,100 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:sf="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<Dialog title="{i18n>EXPENSE_REPORT}" id="SubmitDialogV2" stretch="{device>/system/phone}" horizontalScrolling="true"
+		class="sapUiContentPadding">
+		<content>
+			<core:InvisibleText id="LabelDisclaimerCheckboxId" text="{i18n>EXPENSE_SUBMIT_DISCLAIMER}"/>
+			<l:VerticalLayout id="SubmitDisclaimerDialog::VLContainer" class="sapUiContentPadding"
+				visible="{= ${submitDisclaimerModel>/stripMessage}.length > 0}" width="100%">
+				<l:content>
+					<MessageStrip id="SubmitDisclaimerDialog::VLContainer::Msg" text="{submitDisclaimerModel>/stripMessage}"
+						type="{submitDisclaimerModel>/stripType}" showIcon="true"/>
+				</l:content>
+			</l:VerticalLayout>
+			<!-- Extension before the submit dialog -->
+			<core:ExtensionPoint name="topSubmitDisclaimerDialog"/>
+			<uxap:ObjectPageLayout id="SubimtDisclaimerObjectPageLayout">
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader id="SubmitDisclaimerObjectPageHeader" objectTitle="{= ${Customer}.length > 0 ? ${Customer} : ${Tripno} }"
+						objectSubtitle="{Location}"/>
+				</uxap:headerTitle>
+				<uxap:headerContent>
+					<core:ExtensionPoint name="topSubmitObjectPageContent"/>
+					<l:VerticalLayout id="page::Date::VLContainer">
+						<Label id="page::VLContainer::Date::Label" text="{i18n>SUBMIT_DATE}" labelFor="SumbitLocationID"/>
+						<Text id="SumbitLocationID" text="{parts:[{path:'Datedep'} , {path:'Datearr'}], formatter: '.formatDateAsDateRange'}"/>
+					</l:VerticalLayout>
+					<l:VerticalLayout id="page::TripTotal::VLContainer">
+						<sfi:SmartLabel id="SubmitDisclaimerTripTotalLabel" labelFor="SubmitDisclaimerTripTotalValue"
+							class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+						<sfi:SmartField id="SubmitDisclaimerTripTotalValue" contextEditable="false" uomEditable="false" editable="false" value="{TripTotal}"
+							class="sapSmartTemplatesObjectPageDataPointValue sapSmartTemplatesObjectPageDataPointNumericValue"/>
+					</l:VerticalLayout>
+					<l:VerticalLayout id="page::SumReimbu::VLContainer">
+						<sfi:SmartLabel id="SubmitDisclaimerSumReimbuLabel" labelFor="SubmitDisclaimerSumReimbuValue"
+							class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+						<sfi:SmartField id="SubmitDisclaimerSumReimbuValue" contextEditable="false" uomEditable="false" editable="false" value="{SumReimbu}"
+							class="sapSmartTemplatesObjectPageDataPointValue sapSmartTemplatesObjectPageDataPointNumericValue"/>
+					</l:VerticalLayout>
+					<core:ExtensionPoint name="bottomSubmitObjectPageContent"/>
+				</uxap:headerContent>
+			</uxap:ObjectPageLayout>
+			<l:BlockLayout id="SubimtDisclaimerBlockLayout">
+				<l:BlockLayoutRow id="Reason::BlockLayoutRow" visible="{= ${ReasonFc} > 0 ? true : (${ReasonListFc} > 0 ? true : false) }">
+					<l:BlockLayoutCell id="Reason::BlockLayoutCell">
+						<f:SimpleForm id="SimpleFormReasonID" title="{i18n>SUBMIT_REASON}" editable="true" layout="ResponsiveGridLayout" adjustLabelSpan="false"
+							columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" width="32rem">
+							<f:content>
+								<core:ExtensionPoint name="topSubmitReasonContent"/>
+								<MessageStrip id="Reason::BlockLayoutCell::Msg" text="{ReasonText}" type="Warning" showIcon="true" showCloseButton="false"/>
+								<Label id="Reason::BlockLayoutCell::ReasonList::Label" text="{submitDisclaimerModel>/reasonLabel}" labelFor="SumbitSelectReasonID"
+									visible="{= ${ReasonListFc} > 0 }" required="{= ${ReasonListFc} === 7 }"/>
+								<Select id="SumbitSelectReasonID" forceSelection="false" selectedKey="{Reason}" items="{ path: 'Reasons', sorter: { path: 'ReasonText' } }"
+									visible="{= ${ReasonListFc} > 0 }">
+									<core:ListItem key="{ReasonText}" text="{ReasonText}"/>
+								</Select>
+								<Label id="Reason::BlockLayoutCell::Reason::Label" text="{submitDisclaimerModel>/reasonLabel}" labelFor="SumbitInputReasonID"
+									visible="{= ${ReasonFc} > 0 }" required="{= ${ReasonFc} === 7 }"/>
+								<!--<Input id="SumbitInputReasonID" type="Text" value="{facadeModel>/Reason}" visible="{= ${ReasonFc} > 0 }"/>-->
+								<core:ExtensionPoint name="bottomSubmitReasonContent"/>
+							</f:content>
+						</f:SimpleForm>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow id="Approver::BlockLayoutRow" visible="{= ${ApprovernameFc} > 0 }">
+					<l:BlockLayoutCell id="Approver::BlockLayoutCell">
+						<f:SimpleForm id="SimpleFormApproverID" title="{i18n>SUBMIT_APPROVER}" editable="false" layout="ResponsiveLayout" columnsM="1" columnsL="1"
+							columnsXL="1">
+							<f:content>
+								<core:ExtensionPoint name="topSubmitApproverContent"/>
+								<sfi:SmartLabel id="SubmitDisclaimerApprovernameLabel" labelFor="SubmitDisclaimerApprovernameValue"
+									class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+								<sfi:SmartField id="SubmitDisclaimerApprovernameValue" contextEditable="false" editable="false" value="{Approvername}"
+									class="sapSmartTemplatesObjectPageDataPointValue"/>
+								<core:ExtensionPoint name="bottomSubmitApproverContent"/>
+							</f:content>
+						</f:SimpleForm>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+				<l:BlockLayoutRow id="SubmitCheckbox::BlockLayoutRow">
+					<l:BlockLayoutCell id="SubmitCheckbox::BlockLayoutCell">
+						<CheckBox id="SubmitCheckbox" wrapping="true" text="{submitDisclaimerModel>/submitText}" selected="false" class="tecCheckBoxFullText"
+							ariaLabelledBy="LabelDisclaimerCheckboxId"/>
+					</l:BlockLayoutCell>
+				</l:BlockLayoutRow>
+			</l:BlockLayout>
+			<core:ExtensionPoint name="bottomSubmitDialog"/>
+		</content>
+		<beginButton>
+			<Button id="SubmitButton" text="{i18n>SUBMIT}" enabled="false" type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button id="CancelButton" text="{i18n>CANCEL}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

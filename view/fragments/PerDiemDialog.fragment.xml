@@ -1,0 +1,134 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:tec="sap.fin.travel.lib.reuse.controls" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:sfi="sap.ui.comp.smartfield" xmlns:sfo="sap.ui.comp.smartform" xmlns:form="sap.ui.layout.form">
+	<Dialog id="PerDiemDialog" class="sapUiContentPadding" title="{i18n>PER_DIEM_DEDUCTIONS}">
+		<content>
+			<layout:VerticalLayout id="PerDiemDialog::VLContainer" class="sapUiContentPadding" visible="{= ${messageModel>/stripMessage}.length > 0}">
+				<layout:content>
+					<MessageStrip id="PerDiemDialog::VLContainer::Msg" text="{messageModel>/stripMessage}" type="{messageModel>/stripType}" showIcon="true"></MessageStrip>
+				</layout:content>
+			</layout:VerticalLayout>
+			<layout:VerticalLayout>
+				<!-- Extension before the per diem amount-->
+				<core:ExtensionPoint name="topPerDiem"/>
+				<sfi:SmartLabel id="PerDiemFoodLabel" class="sapSmartTemplatesObjectPageHeaderFormLabel" labelFor="pdFood"/>
+				<sfi:SmartField visible="{= ${PdMealsFc} > 0}" uomEditable="false" id="pdFood" value="{PdFood}"/>
+				<Text class="sapUiSmallMarginBottom"/>
+				<sfi:SmartLabel id="PerDiemHousingLabel" class="sapSmartTemplatesObjectPageHeaderFormLabel" labelFor="pdHousing"/>
+				<sfi:SmartField visible="{= ${PdAccomFc} > 0}" uomEditable="false" id="pdHousing" value="{PdHousing}"/>
+				<!-- Extension below the per diem amount-->
+				<core:ExtensionPoint name="belowPerDiemAmount"/>
+				<Text id="PerDiemAmountMarginBottom" class="sapUiSmallMarginBottom"/>
+				<Text id="explanationText" class="sapUiSmallMarginBottom" text="{i18n>PERDIEM_EXPLANATION}" visible="true"/>
+				<Table id="perDiemListTable" fixedLayout="false" inset="false" alternateRowColors="true" items="{PerDiemDeductions}">
+					<headerToolbar></headerToolbar>
+					<columns>
+						<Column id="perDiemListTable::Date">
+							<Text text="{i18n>PER_DIEM_DATE}"/>
+						</Column>
+						<Column id="perDiemListTable::Breakfast" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="breakfastHeader" text="{i18n>BREAKFAST}" textAlign="Center" wrapping="false" tooltip="{i18n>BREAKFAST}"/>
+						</Column>
+						<Column id="perDiemListTable::BreakfastPk" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="breakfastPkHeader" text="{i18n>BREAKFAST_PK}" textAlign="Center" wrapping="false" tooltip="{i18n>BREAKFAST_PK}"/>
+						</Column>
+						<Column id="perDiemListTable::Lunch" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="lunchHeader" text="{i18n>LUNCH}" textAlign="Center" wrapping="false" tooltip="{i18n>LUNCH}"/>
+						</Column>
+						<Column id="perDiemListTable::LunchPk" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="lunchPkHeader" text="{i18n>LUNCH_PK}" textAlign="Center" wrapping="false" tooltip="{i18n>LUNCH_PK}"/>
+						</Column>
+						<Column id="perDiemListTable::Dinner" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="dinnerHeader" text="{i18n>DINNER}" textAlign="Center" wrapping="false" tooltip="{i18n>DINNER}"/>
+						</Column>
+						<Column id="perDiemListTable::DinnerPk" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="dinnerPkHeader" text="{i18n>DINNER_PK}" textAlign="Center" wrapping="false" tooltip="{i18n>DINNER_PK}"/>
+						</Column>
+						<Column id="perDiemListTable::Coupons" minScreenWidth="Desktop" demandPopin="true">
+							<Text id="couponHeader" text="{i18n>COUPONS}" textAlign="Center" wrapping="false" tooltip="{i18n>COUPONS}"/>
+						</Column>
+						<Column id="perDiemListTable::LodgingNight" minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+							<Text id="nightHeader" text="{i18n>LODGING_NIGHT}" textAlign="Center" wrapping="false" tooltip="{i18n>LODGING_NIGHT}"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem id="perDiemListTable::ColumnListItem">
+							<cells>
+								<!-- date -->
+								<!-- <Text text="{path:'DedDate', type:'sap.ui.model.type.DateTime', formatOptions : { style:'medium/short', UTC: true}}"/> -->
+								<sfi:SmartField wrapping="false" value="{DedDate}"/>
+								<!-- breafkfast -->
+								<VBox alignItems="Center">
+									<items>
+										<tec:IconSwitch icon="sap-icon://nutrition-activity" state="{BreakDe}" activeState="false" press="deduceBreakfast"
+											enabled="{= ${BreakDeFc} > 1}" visible="{= ${BreakDeFc} > 0}" tooltip="{i18n>BREAKFAST}"/>
+										<sfi:SmartField value="{BreakDeTime}"/>
+									</items>
+								</VBox>
+								<VBox alignItems="Center">
+									<sfi:SmartField textAlign="Center" value="{BreakPik}"/>
+								</VBox>
+								<!-- lunch -->
+								<VBox alignItems="Center">
+									<items>
+										<tec:IconSwitch icon="sap-icon://meal" state="{LunchDe}" activeState="false" press="deduceLunch" enabled="{= ${LunchDeFc} > 1}"
+											visible="{= ${LunchDeFc} > 0}" tooltip="{i18n>LUNCH}"/>
+										<sfi:SmartField value="{LunchDeTime}"/>
+									</items>
+								</VBox>
+								<VBox alignItems="Center">
+									<sfi:SmartField textAlign="Center" value="{LunchPik}"/>
+								</VBox>
+								<!-- dinner -->
+								<VBox alignItems="Center">
+									<items>
+										<tec:IconSwitch icon="sap-icon://meal" state="{DinneDe}" activeState="false" press="deduceDinner" enabled="{= ${DinneDeFc} > 1}"
+											visible="{= ${DinneDeFc} > 0}" tooltip="{i18n>DINNER}"/>
+										<sfi:SmartField value="{DinneDeTime}"/>
+									</items>
+								</VBox>
+								<VBox alignItems="Center">
+									<sfi:SmartField textAlign="Center" value="{DinnePik}"/>
+								</VBox>
+								<!-- coupon -->
+								<VBox alignItems="Center">
+									<tec:IconSwitch icon="sap-icon://meal" state="{LuCoupn}" activeState="false" press="deduceCoupon" enabled="{= ${LuCoupnFc} > 1}"
+										visible="{= ${LuCoupnFc} > 0}" tooltip="{i18n>COUPONS}"/>
+								</VBox>
+								<!-- accomodation -->
+								<VBox alignItems="Center">
+									<items>
+										<tec:IconSwitch icon="sap-icon://bed" state="{NightDe}" activeState="false" press="deduceNight" enabled="{= ${NightDeFc} > 1}"
+											visible="{= ${NightDeFc} > 0}" tooltip="{i18n>LODGING_NIGHT}"/>
+										<sfi:SmartField value="{NightDeTime}"/>
+									</items>
+								</VBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</layout:VerticalLayout>
+		</content>
+		<beginButton></beginButton>
+		<buttons>
+			<Button visible="{= !${EditVisible}}" id="applyClosePDButton" ariaDescribedBy="applyClosePDButtonDesc" text="{i18n>APPLY_AND_CLOSE_BUTTON}"
+				type="Emphasized" press="handlePerDiemApplyAndClose"/>
+			<Button visible="{= !${EditVisible}}" id="applyPDButton" ariaDescribedBy="applyPDButtonDesc" text="{i18n>APPLY_BUTTON}"
+				press="handlePerDiemApply"/>
+			<Button visible="{= !${EditVisible}}" id="resetPDButton" ariaDescribedBy="resetPDButtonDesc" text="{i18n>RESET_DEDUCTION}"
+				press="handlePerDiemReset"/>
+			<Button visible="{= !${EditVisible}}" id="cancelPDButton" ariaDescribedBy="CancelPDButtonDesc" text="{i18n>CANCEL}"
+				press="handlePerDiemCancel"/>
+			<Button visible="{= ${EditVisible}}" id="closePDButton" text="{i18n>CLOSE}" press="handlePerDiemClose"/>
+		</buttons>
+		<endButton></endButton>
+		<core:InvisibleText id="applyClosePDButtonDesc" text="{i18n>PER_DIEM_APPLY_DESC}"/>
+		<core:InvisibleText id="applyPDButtonDesc" text="{i18n>PER_DIEM_APPLY_DESC}"/>
+		<core:InvisibleText id="resetPDButtonDesc" text="{i18n>PER_DIEM_RESET_DESC}"/>
+		<core:InvisibleText id="cancelPDButtonDesc" text="{i18n>PER_DIEM_RESET_DESC}"/>
+	</Dialog>
+</core:FragmentDefinition>

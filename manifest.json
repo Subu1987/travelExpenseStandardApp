@@ -1,0 +1,149 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "fin.travel.mytravelexpensesv2",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "2.0.18"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/TRV_MTE_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml",
+					"annotations": []
+				}
+			}
+		},
+		"ach": "FI-FIO-TV-MTE",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"services": {
+			"ShellUIService": {
+				"factoryName": "sap.ushell.ui5service.ShellUIService"
+			}
+		},
+		"rootView": {
+			"viewName": "fin.travel.mytravelexpensesv2.view.Main",
+			"type": "XML",
+			"async": true,
+			"id": "mainView"
+		},
+		"dependencies": {
+			"minUI5Version": "1.52.4",
+			"libs": {
+				"sap.ui.core": {
+					"lazy": false
+				},
+				"sap.m": {
+					"lazy": false
+				},
+				"sap.f": {
+					"lazy": false
+				},
+				"sap.ui.layout": {
+					"lazy": false
+				},
+				"sap.ushell": {
+					"lazy": false
+				},
+				"sap.collaboration": {
+					"lazy": false
+				},
+				"sap.ui.comp": {
+					"lazy": false
+				},
+				"sap.uxap": {
+					"lazy": false
+				},
+				"sap.fin.travel.lib.reuse": {
+					"lazy": false
+				}
+			}
+		},
+		"componentUsages": {
+			"DetailPage": {
+				"name": "sap.fin.travel.lib.reuse.DetailPage"
+
+			},
+			"ListPage": {
+				"name": "sap.fin.travel.lib.reuse.ListPage"
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "fin.travel.mytravelexpensesv2.i18n.i18n"
+				}
+			},
+			"i18n||Default": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "fin.travel.mytravelexpensesv2.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"preload": true,
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"refreshAfterChange": true
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"targets": {
+				"PerDiem": {
+					"viewType": "XML",
+					"viewName": "PerDiem"
+				}
+			}
+		}
+	},
+	"sap.fiori": {
+		"registrationIds": [
+			"F0584A"
+		],
+		"archeType": "transactional"
+	}
+}

@@ -1,0 +1,13 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="ReceiptsAttachmentsColumn" visible="{= !${HiddenReceiptsAttachments}}">
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "RECEIPT_COLUMN_ATTACHMENTS", "columnIndex":"99"}'/>
+		</customData>
+		<Text id="ReceiptsAttachmentText" text="{i18n>RECEIPT_COLUMN_ATTACHMENTS}"/>
+	</Column>
+</core:FragmentDefinition>

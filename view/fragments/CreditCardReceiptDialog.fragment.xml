@@ -1,0 +1,64 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+	<Dialog id="CreditCardBufferDialog" class="sapUiContentPadding" title="{i18n>CREDIT_CARD_RECEIPT_TITLE}">
+		<content>
+			<layout:VerticalLayout id="CreditCardBufferDialog::VLContainer" class="sapUiContentPadding"
+				visible="{= ${creditCardModel>/StripMessage}.length > 0}" width="100%">
+				<layout:content>
+					<MessageStrip id="CreditCardBufferDialog::VLContainer::Msg" text="{creditCardModel>/StripMessage}" type="{creditCardModel>/StripType}"
+						showIcon="true"/>
+				</layout:content>
+			</layout:VerticalLayout>
+			<smartfilterbar:SmartFilterBar id="CreditCardBufferFilterBar" entitySet="CreditCardsBuffer" enableBasicSearch="true"
+				persistencyKey="CreditCardBufferFilterBar_Key" basicSearchFieldName="CTxt" useToolbar="false">
+				<smartfilterbar:controlConfiguration>
+					<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::ExpTypeName" key="ExpTypeName" visibleInAdvancedArea="true"/>
+					<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::RecDate" key="RecDate" visibleInAdvancedArea="true" conditionType="sap.ui.comp.config.condition.DateRangeType">
+						<smartfilterbar:defaultFilterValues>
+							<smartfilterbar:SelectOption id="CreditCardBufferFilterBar::Select::BeginDate" low="{creditCardModel>/BeginDate}"
+								high="{creditCardModel>/EndDate}"></smartfilterbar:SelectOption>
+						</smartfilterbar:defaultFilterValues>
+					</smartfilterbar:ControlConfiguration>
+					<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::Pernr" key="Pernr" visibleInAdvancedArea="true">
+						<smartfilterbar:defaultFilterValues>
+							<smartfilterbar:SelectOption id="CreditCardBufferFilterBar::Select::Pernr" low="{creditCardModel>/Pernr}"></smartfilterbar:SelectOption>
+						</smartfilterbar:defaultFilterValues>
+					</smartfilterbar:ControlConfiguration>
+					<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::Tripno" key="Tripno" visibleInAdvancedArea="true">
+						<smartfilterbar:defaultFilterValues>
+							<smartfilterbar:SelectOption id="CreditCardBufferFilterBar::Select::Tripno" low="{creditCardModel>/Tripno}"></smartfilterbar:SelectOption>
+						</smartfilterbar:defaultFilterValues>
+					</smartfilterbar:ControlConfiguration>
+				</smartfilterbar:controlConfiguration>
+				<smartfilterbar:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartfilterbar:layoutData>
+			</smartfilterbar:SmartFilterBar>
+			<smarttable:SmartTable id="CreditCardBufferSmartTable" smartFilterId="CreditCardReceiptDialogFragment--CreditCardBufferFilterBar"
+				showRowCount="true" header="{i18n>CREDIT_CARD_RECEIPT_HEADER}" tableType="ResponsiveTable" useVariantManagement="false"
+				useExportToExcel="false" enableAutoBinding="true" entitySet="CreditCardsBuffer" tableBindingPath="CreditCardsBuffer" demandPopin="true"
+				beforeRebindTable=".handleBeforeRebindTable" class="sapUiResponsiveContentPadding">
+				<smarttable:customToolbar>
+					<OverflowToolbar id="CreditCardBufferSetId::Table::Toolbar" design="Transparent">
+						<ToolbarSpacer id="CreditCardBufferSetId::Table::ToolbarSpacer"/>
+						<Button id="CreditCardBufferSetId::Button::deleteEntry" text="{i18n>DELETE_BUTTON}" visible="{creditCardModel>/Deletable}" enabled="false"
+							type="Transparent"/>
+					</OverflowToolbar>
+				</smarttable:customToolbar>
+				<Table id="CreditCardBufferSetId::ResponsiveTable" growing="true" mode="MultiSelect" rememberSelections="false" growingThreshold="15"/>
+			</smarttable:SmartTable>
+		</content>
+		<beginButton>
+			<Button id="submitButton" visible="{= !${creditCardModel>/Creatable} }" text="{i18n>ASSIGN_BUTTON}" type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button id="endButton" type="{= ${creditCardModel>/Creatable} ? 'Emphasized' : 'Transparent' }"
+				text="{= ${creditCardModel>/Creatable} ? ${i18n>CLOSE} : ${i18n>CANCEL} }"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

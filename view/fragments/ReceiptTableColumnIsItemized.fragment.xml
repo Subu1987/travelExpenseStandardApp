@@ -1,0 +1,14 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:sfi="sap.ui.comp.smartfield"
+	xmlns:trvlib="sap.fin.travel.lib.reuse.controls" xmlns:uxap="sap.uxap" xmlns:sfo="sap.ui.comp.smartform">
+	<Column id="ItemizedColumn" visible="true">
+		<customData>
+			<core:CustomData key="p13nData" value='\{"columnKey": "IS_ITEMIZED", "columnIndex":"99"}'/>
+		</customData>
+		<Text id="ItemizedText" text="{i18n>IS_ITEMIZED}"/>
+	</Column>
+</core:FragmentDefinition> 

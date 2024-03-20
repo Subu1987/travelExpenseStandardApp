@@ -1,0 +1,17 @@
+/* Enter your custom styles here */
+.tecUiContentPaddingTop {
+    margin-top: 1.5rem;
+}
+
+.tecCheckBoxFullText {
+    min-height: 7rem;
+}
+
+.tecCheckBoxFullText .sapMCbLabel {
+    width: 32em;
+    text-align: justify !important;
+}
+
+.sap-phone .tecCheckBoxFullText .sapMCbLabel {
+    width: 95%;
+}

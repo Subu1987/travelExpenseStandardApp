@@ -1,0 +1,82 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:sfi="sap.ui.comp.smartfield">
+	<Dialog title="{i18n>EXPENSE_REPORT}" id="submitDialog" stretch="{device>/system/phone}" horizontalScrolling="true"
+		 class="sapUiContentPadding">
+		<content>
+			<core:InvisibleText id="LabeldisclaimerCheckboxId" text="{i18n>EXPENSE_SUBMIT_DISCLAIMER}"/>
+			<!-- Extension before the submit dialog -->
+			<core:ExtensionPoint name="topSubmitDisclaimerDialog"/>
+			<VBox id="SubmitDisclaimer::VContainer" fitContainer="true">
+				<items>
+					<ObjectHeader id="header" title="{Customer}" class="tecNoPadding">
+						<attributes>
+							<ObjectAttribute id="destinationAttribute" text="{Location}"/>
+							<ObjectAttribute id="dateAttribute" text="{parts:[{path:'Datedep'} , {path:'Datearr'}], formatter: '.formatDateAsDateRange'}"/>
+						</attributes>
+					</ObjectHeader>
+					<VBox id="SubmitDisclaimer::Items::Header::VContainer" fitContainer="true" class="tecUiContentPaddingTop">
+						<layoutData>
+							<FlexItemData growFactor="7"/>
+						</layoutData>
+						<items>
+							<HBox id="SubmitDisclaimer::Items::HContainer">
+								<layoutData>
+									<FlexItemData growFactor="3"/>
+								</layoutData>
+								<items>
+									<VBox id="SubmitDisclaimer::Items::HContainer::TripTotal::VContainer">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+										<sfi:SmartLabel id="SubmitDisclaimerTripTotalLabel" labelFor="SubmitDisclaimerTripTotalValue"
+											class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+										<sfi:SmartField id="SubmitDisclaimerTripTotalValue" contextEditable="false" uomEditable="false" editable="false" value="{TripTotal}"
+											class="sapSmartTemplatesObjectPageDataPointValue sapSmartTemplatesObjectPageDataPointNumericValue"/>
+									</VBox>
+									<VBox id="SubmitDisclaimer::Items::HContainer::SumReimbu::VContainer">
+										<layoutData>
+											<FlexItemData growFactor="1"/>
+										</layoutData>
+										<sfi:SmartLabel id="SubmitDisclaimerSumReimbuLabel" labelFor="SubmitDisclaimerSumReimbuValue"
+											class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+										<sfi:SmartField id="SubmitDisclaimerSumReimbuValue" contextEditable="false" uomEditable="false" editable="false" value="{SumReimbu}"
+											class="sapSmartTemplatesObjectPageDataPointValue sapSmartTemplatesObjectPageDataPointNumericValue"/>
+									</VBox>
+								</items>
+							</HBox>
+						</items>
+					</VBox>
+					<VBox id="SubmitDisclaimer::Items::Approver::VContainer" visible="{= ${ApprovernameFc} > 0 }" class="tecUiContentPaddingTop">
+						<layoutData>
+							<FlexItemData growFactor="2"/>
+						</layoutData>
+						<sfi:SmartLabel id="SubmitDisclaimerApprovernameLabel" labelFor="SubmitDisclaimerApprovernameValue"
+							class="sapSmartTemplatesObjectPageDataPointLabel sapUiTinyMarginEnd"/>
+						<sfi:SmartField id="SubmitDisclaimerApprovernameValue" contextEditable="false" editable="false" value="{Approvername}"
+							class="sapSmartTemplatesObjectPageDataPointValue"/>
+					</VBox>
+					<VBox id="SubmitDisclaimer::Items::SubmitCheckbox::VContainer">
+						<CheckBox id="SubmitCheckbox" wrapping="true" text="{submitDisclaimerModel>/submitText}" selected="false"
+							class="tecUiContentPaddingTop tecCheckBoxFullText">
+							<layoutData>
+								<FlexItemData growFactor="2"/>
+							</layoutData>
+						</CheckBox>
+					</VBox>
+				</items>
+			</VBox>
+			<core:ExtensionPoint name="bottomSubmitDialog"/>
+		</content>
+		<beginButton>
+			<Button id="SubmitButton" text="{i18n>SUBMIT}" enabled="false" type="Emphasized"/>
+		</beginButton>
+		<endButton>
+			<Button id="CancelButton" text="{i18n>CANCEL}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

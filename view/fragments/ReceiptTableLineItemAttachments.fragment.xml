@@ -1,0 +1,11 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:tec="sap.fin.travel.lib.reuse.controls">
+	<tec:IconWithNumber id="AttachmentIconWithNumber"
+		tooltip="{parts:[{path:'i18n>HAS_ATTACHMENT'},{path:'Nbattachments'}], formatter:'jQuery.sap.formatMessage'}"
+		visible="{= ${Nbattachments} > 0 }" count="{= ${Nbattachments}}" press="handleReceiptHasAttachmentButtonPressed"/>
+</core:FragmentDefinition>

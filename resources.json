@@ -1,0 +1,849 @@
+{
+	"_version": "1.1.0",
+	"resources": [
+		{
+			"name": "Component-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/Component.js",
+			"isDebug": true,
+			"required": [
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "Component-preload.js",
+			"module": "fin/travel/mytravelexpensesv2/Component-preload.js",
+			"merged": true,
+			"required": [
+				"sap/f/FlexibleColumnLayout.js",
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomAction.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/Label.js",
+				"sap/m/MessageBox.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/ObjectHeader.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/Page.js",
+				"sap/m/Select.js",
+				"sap/m/Switch.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/VBox.js",
+				"sap/m/Wizard.js",
+				"sap/m/WizardStep.js",
+				"sap/ui/Device.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/Layout.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js",
+				"sap/ui/core/InvisibleText.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/core/mvc/Controller.js",
+				"sap/ui/core/mvc/XMLView.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js",
+				"sap/uxap/ObjectPageHeader.js",
+				"sap/uxap/ObjectPageLayout.js"
+			],
+			"included": [
+				"fin/travel/mytravelexpensesv2/Component.js",
+				"fin/travel/mytravelexpensesv2/conf/AppDescriptor.js",
+				"fin/travel/mytravelexpensesv2/conf/AppManifest.js",
+				"fin/travel/mytravelexpensesv2/controller/DetailPageExtension.controller.js",
+				"fin/travel/mytravelexpensesv2/controller/ListPageExtension.controller.js",
+				"fin/travel/mytravelexpensesv2/controller/Main.controller.js",
+				"fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerHelper.js",
+				"fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerWithReasonHelper.js",
+				"fin/travel/mytravelexpensesv2/i18n/i18n.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_ar.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_bg.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_cs.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_de.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_en.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_en_US_sappsd.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_en_US_saptrc.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_es.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_fr.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_hr.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_hu.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_it.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_iw.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_ja.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_no.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_pl.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_pt.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_ro.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_ru.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_sh.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_sk.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_sl.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_tr.properties",
+				"fin/travel/mytravelexpensesv2/i18n/i18n_zh_CN.properties",
+				"fin/travel/mytravelexpensesv2/manifest.json",
+				"fin/travel/mytravelexpensesv2/model/models.js",
+				"fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+				"fin/travel/mytravelexpensesv2/view/Main.view.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/CreditCardReceiptDialog.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/PerDiem.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/PerDiemDialog.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableColumnAttachments.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableColumnExpenseCategoryIcon.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableColumnIsItemized.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableLineItemAttachments.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableLineItemExpenseCategoryIcon.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableLineItemIsItemized.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/SubmitDisclaimerDialog.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/SubmitDisclaimerDialogWithReason.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardCreditCardDialog.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialog.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogAttendeesTable.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogFlightInfo.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogProductsTable.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogReceiptsInfo.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogVATDetails.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogVendor.fragment.xml"
+			]
+		},
+		{
+			"name": "Component.js",
+			"module": "fin/travel/mytravelexpensesv2/Component.js",
+			"required": [
+				"sap/f/FlexibleColumnLayoutSemanticHelper.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/ui/Device.js",
+				"sap/ui/core/UIComponent.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "conf/AppDescriptor-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/conf/AppDescriptor.js",
+			"isDebug": true
+		},
+		{
+			"name": "conf/AppDescriptor.js",
+			"module": "fin/travel/mytravelexpensesv2/conf/AppDescriptor.js"
+		},
+		{
+			"name": "conf/AppManifest-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/conf/AppManifest.js",
+			"isDebug": true
+		},
+		{
+			"name": "conf/AppManifest.js",
+			"module": "fin/travel/mytravelexpensesv2/conf/AppManifest.js"
+		},
+		{
+			"name": "controller/DetailPageExtension-dbg.controller.js",
+			"module": "fin/travel/mytravelexpensesv2/controller/DetailPageExtension.controller.js",
+			"isDebug": true,
+			"required": [
+				"fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerHelper.js",
+				"fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerWithReasonHelper.js",
+				"fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/CustomAction.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/DetailPageExtension.controller.js",
+			"module": "fin/travel/mytravelexpensesv2/controller/DetailPageExtension.controller.js",
+			"required": [
+				"fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerHelper.js",
+				"fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerWithReasonHelper.js",
+				"fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+				"sap/fin/travel/lib/reuse/util/AnnotationHelper.js",
+				"sap/fin/travel/lib/reuse/util/CustomAction.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/DateRangeSelection.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/ListPageExtension-dbg.controller.js",
+			"module": "fin/travel/mytravelexpensesv2/controller/ListPageExtension.controller.js",
+			"isDebug": true,
+			"required": [
+				"fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/ListPageExtension.controller.js",
+			"module": "fin/travel/mytravelexpensesv2/controller/ListPageExtension.controller.js",
+			"required": [
+				"fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/CustomDataUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageBox.js",
+				"sap/ui/model/Context.js",
+				"sap/ui/model/Filter.js",
+				"sap/ui/model/FilterOperator.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "controller/Main-dbg.controller.js",
+			"module": "fin/travel/mytravelexpensesv2/controller/Main.controller.js",
+			"isDebug": true,
+			"required": [
+				"fin/travel/mytravelexpensesv2/conf/AppDescriptor.js",
+				"fin/travel/mytravelexpensesv2/conf/AppManifest.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "controller/Main.controller.js",
+			"module": "fin/travel/mytravelexpensesv2/controller/Main.controller.js",
+			"required": [
+				"fin/travel/mytravelexpensesv2/conf/AppDescriptor.js",
+				"fin/travel/mytravelexpensesv2/conf/AppManifest.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/ui/core/mvc/Controller.js"
+			]
+		},
+		{
+			"name": "css/style-dbg.css",
+			"isDebug": true
+		},
+		{
+			"name": "css/style.css"
+		},
+		{
+			"name": "helper/SubmitDisclaimerHelper-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "helper/SubmitDisclaimerHelper.js",
+			"module": "fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "helper/SubmitDisclaimerWithReasonHelper-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerWithReasonHelper.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "helper/SubmitDisclaimerWithReasonHelper.js",
+			"module": "fin/travel/mytravelexpensesv2/helper/SubmitDisclaimerWithReasonHelper.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/core/ValueState.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "i18n/i18n.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n.properties",
+			"locale": "",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ar.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_ar.properties",
+			"locale": "ar",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_bg.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_bg.properties",
+			"locale": "bg",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_cs.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_cs.properties",
+			"locale": "cs",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_de.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_de.properties",
+			"locale": "de",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_en.properties",
+			"locale": "en",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_sappsd.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_en_US_sappsd.properties",
+			"locale": "en_US_sappsd",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_en_US_saptrc.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_en_US_saptrc.properties",
+			"locale": "en_US_saptrc",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_es.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_es.properties",
+			"locale": "es",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_fr.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_fr.properties",
+			"locale": "fr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hr.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_hr.properties",
+			"locale": "hr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_hu.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_hu.properties",
+			"locale": "hu",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_it.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_it.properties",
+			"locale": "it",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_iw.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_iw.properties",
+			"locale": "iw",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ja.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_ja.properties",
+			"locale": "ja",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_no.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_no.properties",
+			"locale": "no",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pl.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_pl.properties",
+			"locale": "pl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_pt.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_pt.properties",
+			"locale": "pt",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ro.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_ro.properties",
+			"locale": "ro",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_ru.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_ru.properties",
+			"locale": "ru",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sh.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_sh.properties",
+			"locale": "sh",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sk.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_sk.properties",
+			"locale": "sk",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_sl.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_sl.properties",
+			"locale": "sl",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_tr.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_tr.properties",
+			"locale": "tr",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "i18n/i18n_zh_CN.properties",
+			"module": "fin/travel/mytravelexpensesv2/i18n/i18n_zh_CN.properties",
+			"locale": "zh_CN",
+			"raw": "i18n/i18n.properties"
+		},
+		{
+			"name": "localService/metadata.xml"
+		},
+		{
+			"name": "localService/mockserver-dbg.js",
+			"isDebug": true
+		},
+		{
+			"name": "localService/mockserver.js"
+		},
+		{
+			"name": "manifest.json",
+			"module": "fin/travel/mytravelexpensesv2/manifest.json"
+		},
+		{
+			"name": "model/models-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/model/models.js",
+			"isDebug": true,
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "model/models.js",
+			"module": "fin/travel/mytravelexpensesv2/model/models.js",
+			"required": [
+				"sap/ui/Device.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "resources.json"
+		},
+		{
+			"name": "util/CreditCardUtil-dbg.js",
+			"module": "fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+			"isDebug": true,
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "util/CreditCardUtil.js",
+			"module": "fin/travel/mytravelexpensesv2/util/CreditCardUtil.js",
+			"required": [
+				"sap/fin/travel/lib/reuse/util/ActionUtil.js",
+				"sap/fin/travel/lib/reuse/util/AppComponent.js",
+				"sap/fin/travel/lib/reuse/util/ControlUtil.js",
+				"sap/fin/travel/lib/reuse/util/FragmentHelper.js",
+				"sap/fin/travel/lib/reuse/util/MessageParser.js",
+				"sap/fin/travel/lib/reuse/util/MessageUtil.js",
+				"sap/fin/travel/lib/reuse/util/NavigationUtil.js",
+				"sap/fin/travel/lib/reuse/util/ODataModelUtil.js",
+				"sap/fin/travel/lib/reuse/util/PersistenceHelper.js",
+				"sap/fin/travel/lib/reuse/util/TravelUtil.js",
+				"sap/fin/travel/lib/reuse/util/Utils.js",
+				"sap/fin/travel/lib/reuse/util/i18n.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/MessageToast.js",
+				"sap/m/VBox.js",
+				"sap/ui/core/MessageType.js",
+				"sap/ui/model/json/JSONModel.js"
+			]
+		},
+		{
+			"name": "version.json"
+		},
+		{
+			"name": "view/Main.view.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/Main.view.xml",
+			"required": [
+				"fin/travel/mytravelexpensesv2/controller/Main.controller.js",
+				"sap/f/FlexibleColumnLayout.js",
+				"sap/ui/core/mvc/XMLView.js"
+			]
+		},
+		{
+			"name": "view/fragments/CreditCardReceiptDialog.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/CreditCardReceiptDialog.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "view/fragments/PerDiem.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/PerDiem.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/Switch.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/Layout.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/PerDiemDialog.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/PerDiemDialog.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Column.js",
+				"sap/m/ColumnListItem.js",
+				"sap/m/Dialog.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/Table.js",
+				"sap/m/Text.js",
+				"sap/m/VBox.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleText.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "view/fragments/ReceiptTableColumnAttachments.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableColumnAttachments.fragment.xml",
+			"required": [
+				"sap/m/Column.js",
+				"sap/m/Text.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/ReceiptTableColumnExpenseCategoryIcon.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableColumnExpenseCategoryIcon.fragment.xml",
+			"required": [
+				"sap/m/Column.js",
+				"sap/m/Text.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/ReceiptTableColumnIsItemized.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableColumnIsItemized.fragment.xml",
+			"required": [
+				"sap/m/Column.js",
+				"sap/m/Text.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/ReceiptTableLineItemAttachments.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableLineItemAttachments.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/ReceiptTableLineItemExpenseCategoryIcon.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableLineItemExpenseCategoryIcon.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "view/fragments/ReceiptTableLineItemIsItemized.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/ReceiptTableLineItemIsItemized.fragment.xml",
+			"required": [
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/Icon.js"
+			]
+		},
+		{
+			"name": "view/fragments/SubmitDisclaimerDialog.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/SubmitDisclaimerDialog.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/HBox.js",
+				"sap/m/ObjectAttribute.js",
+				"sap/m/ObjectHeader.js",
+				"sap/m/VBox.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleText.js"
+			]
+		},
+		{
+			"name": "view/fragments/SubmitDisclaimerDialogWithReason.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/SubmitDisclaimerDialogWithReason.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/CheckBox.js",
+				"sap/m/Dialog.js",
+				"sap/m/Label.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/Select.js",
+				"sap/m/Text.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/core/ExtensionPoint.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/core/InvisibleText.js",
+				"sap/ui/core/ListItem.js",
+				"sap/ui/layout/BlockLayout.js",
+				"sap/ui/layout/BlockLayoutCell.js",
+				"sap/ui/layout/BlockLayoutRow.js",
+				"sap/ui/layout/VerticalLayout.js",
+				"sap/ui/layout/form/SimpleForm.js",
+				"sap/uxap/ObjectPageHeader.js",
+				"sap/uxap/ObjectPageLayout.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardCreditCardDialog.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardCreditCardDialog.fragment.xml",
+			"required": [
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/FlexItemData.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/Page.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/Wizard.js",
+				"sap/m/WizardStep.js",
+				"sap/ui/comp/smartfilterbar/ControlConfiguration.js",
+				"sap/ui/comp/smartfilterbar/SelectOption.js",
+				"sap/ui/comp/smartfilterbar/SmartFilterBar.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/CustomData.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialog.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialog.fragment.xml",
+			"required": [
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogFlightInfo.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogReceiptsInfo.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogVATDetails.fragment.xml",
+				"fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogVendor.fragment.xml",
+				"sap/m/Button.js",
+				"sap/m/Dialog.js",
+				"sap/m/MessageStrip.js",
+				"sap/m/OverflowToolbar.js",
+				"sap/m/OverflowToolbarButton.js",
+				"sap/m/Page.js",
+				"sap/m/Table.js",
+				"sap/m/ToolbarSpacer.js",
+				"sap/m/Wizard.js",
+				"sap/m/WizardStep.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartfield/SmartLabel.js",
+				"sap/ui/comp/smartform/Group.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/comp/smartform/SmartForm.js",
+				"sap/ui/comp/smarttable/SmartTable.js",
+				"sap/ui/core/Fragment.js",
+				"sap/ui/layout/VerticalLayout.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialogAttendeesTable.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogAttendeesTable.fragment.xml",
+			"required": [
+				"sap/m/ColumnListItem.js",
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialogFlightInfo.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogFlightInfo.fragment.xml",
+			"required": [
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialogProductsTable.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogProductsTable.fragment.xml",
+			"required": [
+				"sap/m/ColumnListItem.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialogReceiptsInfo.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogReceiptsInfo.fragment.xml",
+			"required": [
+				"sap/ui/comp/smartfield/Configuration.js",
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialogVATDetails.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogVATDetails.fragment.xml",
+			"required": [
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/core/Fragment.js"
+			]
+		},
+		{
+			"name": "view/fragments/WizardSplitReceiptDialogVendor.fragment.xml",
+			"module": "fin/travel/mytravelexpensesv2/view/fragments/WizardSplitReceiptDialogVendor.fragment.xml",
+			"required": [
+				"sap/ui/comp/smartfield/SmartField.js",
+				"sap/ui/comp/smartform/GroupElement.js",
+				"sap/ui/core/Fragment.js"
+			]
+		}
+	]
+}

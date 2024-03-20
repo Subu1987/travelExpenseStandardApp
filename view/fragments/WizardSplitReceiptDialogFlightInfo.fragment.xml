@@ -1,0 +1,26 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<sfo:GroupElement id="WizardSplitReceipt::FligthInfo::AirDeparture::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::FligthInfo::AirDeparture::Field" value="{AirDeparture}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::FligthInfo::AirArrival::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::FligthInfo::AirArrival::Field" value="{AirArrival}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::FligthInfo::Airline::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::FligthInfo::Airline::Field" value="{Airline}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::FligthInfo::AirCabinClass::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::FligthInfo::AirCabinClass::Field" value="{AirCabinClass}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::FligthInfo::AirTicketNumber::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::FligthInfo::AirTicketNumber::Field" value="{AirTicketNumber}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::FligthInfo::CarOdometerReading::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::FligthInfo::CarOdometerReading::Field" value="{CarOdometerReading}"/>
+	</sfo:GroupElement>
+</core:FragmentDefinition>

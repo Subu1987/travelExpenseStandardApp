@@ -1,0 +1,8 @@
+{ "application": "fin.travel.mytravelexpensesv2",
+  "version": "2.0.18",
+  "buildNumber": "1",
+  "buildId": "1",
+  "branch": "detached",
+  "revision": "85cc2762b4c2cf4cba2f6dfbbe63cbf215eea7d2",
+  "GitURL": "https://github.tools.sap/FIORI-TRAVEL/fin.travel.mytravelexpensesv2.git"
+}

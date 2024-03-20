@@ -1,0 +1,8 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<View id="mainView" xmlns="sap.f" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true" controllerName="fin.travel.mytravelexpensesv2.controller.Main" height="100%">
+	<FlexibleColumnLayout id="fcl" />
+</View>

@@ -1,0 +1,9 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:tec="sap.fin.travel.lib.reuse.controls">
+		<core:Icon id="IsItemizedIcon" src="sap-icon://receipt" visible="{= ${Isitemized}}" decorative="false" tooltip="{i18n>IS_ITEMIZED}" alt="{i18n>IS_ITEMIZED}"/>
+</core:FragmentDefinition>

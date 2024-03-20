@@ -1,0 +1,92 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::RecRate::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::RecRate::Field" value="{RecRate}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::PayAmount::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::PayAmount::Field" value="{PayAmount}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::TaxCode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::TaxCode::Field" value="{TaxCode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Taxjurcode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Taxjurcode::Field" value="{Taxjurcode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::FromDate::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::FromDate::Field" value="{FromDate}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::ToDate::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::ToDate::Field" value="{ToDate}"/>
+	</sfo:GroupElement>
+	<!-- another potential group -->
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::PaperReceipt::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::PaperReceipt::Field" value="{PaperReceipt}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::ReceiptOk::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::ReceiptOk::Field" value="{ReceiptOk}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NoUnit::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NoUnit::Field" value="{NoUnit}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NoBrft::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NoBrft::Field" value="{NoBrft}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NoLunch::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NoLunch::Field" value="{NoLunch}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NoDinner::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NoDinner::Field" value="{NoDinner}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NStf::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NStf::Field" value="{NStf}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NPtn::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NPtn::Field" value="{NPtn}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::NGst::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::NGst::Field" value="{NGst}"/>
+	</sfo:GroupElement>
+	<!-- another potential group -->
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::TtComsp::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::TtComsp::Field" value="{TtComsp}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Descript::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Descript::Field" value="{Descript}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::PPrv::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::PPrv::Field" value="{PPrv}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::PDoc::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::PDoc::Field" value="{PDoc}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Location::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Location::Field" value="{Location}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Country::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Country::Field" value="{Country}">
+			<sfi:configuration>
+				<sfi:Configuration preventInitialDataFetchInValueHelpDialog="false" />
+			</sfi:configuration>
+		</sfi:SmartField>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Shorttxt::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Shorttxt::Field" value="{Shorttxt}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::BusPurpo::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::BusPurpo::Field" value="{BusPurpo}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::BusReason::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::BusReason::Field" value="{BusReason}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Payout::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Payout::Field" value="{Payout}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Receipt::Editor::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Receipt::Editor::Field" value="{Editor}"/>
+	</sfo:GroupElement>
+</core:FragmentDefinition>

@@ -1,0 +1,27 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<ColumnListItem>
+		<cells>
+			<sfi:SmartField value="{RelationName}">
+				<sfi:configuration>
+					<sfi:Configuration preventInitialDataFetchInValueHelpDialog="false" />
+				</sfi:configuration>
+				<!-- id is RelationName? How can we define it as Relation? -->
+				<!--	<sfi:configuration>
+					<sfi:Configuration controlType="dropDownList" displayBehaviour="idOnly"/>
+				</sfi:configuration>
+			-->
+			</sfi:SmartField>
+			<sfi:SmartField value="{Name}"/>
+			<sfi:SmartField value="{FirstName}"/>
+			<sfi:SmartField value="{Jobtitel}"/>
+			<sfi:SmartField value="{Company}"/>
+			<sfi:SmartField value="{PernrInt}"/>
+			<sfi:SmartField value="{BuPartner}"/>
+		</cells>
+	</ColumnListItem>
+</core:FragmentDefinition>

@@ -1,0 +1,83 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:tec="sap.fin.travel.lib.reuse.controls" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:sfi="sap.ui.comp.smartfield" xmlns:sfo="sap.ui.comp.smartform" xmlns:smarttable="sap.ui.comp.smarttable"
+	xmlns:smartfilterbar="sap.ui.comp.smartfilterbar">
+	<Dialog id="creditCard::Dialog" class="sapUiContentPadding" title="{i18n>CREDIT_CARD_RECEIPT_TITLE}" stretch="true">
+		<content>
+			<Page id="creditCard::page" showHeader="false">
+				<content>
+					<Wizard id="creditCardWizard" showNextButton="false">
+						<WizardStep id="creditCardWizard::buffer::step" title="{i18n>CREDIT_CARD_RECEIPT_HEADER}" validated="false">
+							<layout:VerticalLayout id="creditCardWizard::buffer::step::VLContainer" class="sapUiContentPadding"
+								visible="{= ${creditCardModel>/StripMessage}.length > 0}">
+								<layout:content>
+									<MessageStrip id="creditCardWizard::buffer::step::VLContainer::Msg" text="{creditCardModel>/StripMessage}"
+										type="{creditCardModel>/StripType}" showIcon="true"></MessageStrip>
+								</layout:content>
+							</layout:VerticalLayout>
+							<smartfilterbar:SmartFilterBar id="CreditCardBufferFilterBar" entitySet="CreditCardsBuffer" enableBasicSearch="true"
+								persistencyKey="CreditCardBufferFilterBar_Key" basicSearchFieldName="CTxt" useToolbar="false">
+								<smartfilterbar:controlConfiguration>
+									<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::ExpTypeName" key="ExpTypeName" visibleInAdvancedArea="true"/>
+									<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::RecDate" key="RecDate" visibleInAdvancedArea="true" conditionType="sap.ui.comp.config.condition.DateRangeType">
+										<smartfilterbar:defaultFilterValues>
+											<smartfilterbar:SelectOption id="CreditCardBufferFilterBar::Select::BeginDate" low="{creditCardModel>/BeginDate}"
+												high="{creditCardModel>/EndDate}"></smartfilterbar:SelectOption>
+										</smartfilterbar:defaultFilterValues>
+									</smartfilterbar:ControlConfiguration>
+									<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::Pernr" key="Pernr" visibleInAdvancedArea="true">
+										<smartfilterbar:defaultFilterValues>
+											<smartfilterbar:SelectOption id="CreditCardBufferFilterBar::Select::Pernr" low="{creditCardModel>/Pernr}"></smartfilterbar:SelectOption>
+										</smartfilterbar:defaultFilterValues>
+									</smartfilterbar:ControlConfiguration>
+									<smartfilterbar:ControlConfiguration id="CreditCardBufferFilterBar::Conf::Tripno" key="Tripno" visibleInAdvancedArea="true">
+										<smartfilterbar:defaultFilterValues>
+											<smartfilterbar:SelectOption id="CreditCardBufferFilterBar::Select::Tripno" low="{creditCardModel>/Tripno}"></smartfilterbar:SelectOption>
+										</smartfilterbar:defaultFilterValues>
+									</smartfilterbar:ControlConfiguration>
+								</smartfilterbar:controlConfiguration>
+								<smartfilterbar:layoutData>
+									<FlexItemData shrinkFactor="0"/>
+								</smartfilterbar:layoutData>
+							</smartfilterbar:SmartFilterBar>
+							<smarttable:SmartTable id="CreditCardBufferSmartTable" smartFilterId="CreditCardReceiptDialogFragment--CreditCardBufferFilterBar"
+								showRowCount="true" header="{i18n>CREDIT_CARD_RECEIPT_HEADER}" tableType="ResponsiveTable" useVariantManagement="false"
+								useExportToExcel="false" enableAutoBinding="true" entitySet="CreditCardsBuffer" tableBindingPath="CreditCardsBuffer" demandPopin="true"
+								beforeRebindTable=".handleBeforeRebindTable" class="sapUiResponsiveContentPadding">
+								<smarttable:customToolbar>
+									<OverflowToolbar id="CreditCardBufferSetId::Table::Toolbar" design="Transparent">
+										<ToolbarSpacer id="CreditCardBufferSmartTable::SpacerToolbar"/>
+										<Button id="creditCardStep2Button" press="handleWizardStep1CreaditCardComplete" text="{i18n>CREDIT_CARD_STEP2_BUTTON}" type="Transparent"
+											enabled="false">
+											<customData>
+												<core:CustomData key="Action" value="TRV_MTE_SRV.TRV_MTE_SRV_Entities/CreateExpense"/>
+											</customData>
+										</Button>
+										<Button id="CreditCardBufferSetId::Button::deleteEntry" text="{i18n>DELETE_BUTTON}" visible="{creditCardModel>/Deletable}" enabled="false"
+											type="Transparent"/>
+									</OverflowToolbar>
+								</smarttable:customToolbar>
+								<Table id="CreditCardBufferSetId::ResponsiveTable" growing="true" mode="MultiSelect" rememberSelections="false" growingThreshold="10"/>
+							</smarttable:SmartTable>
+							<Button id="creditCardStep2ButtonDummy" press="handleWizardStep1CreaditCardComplete" text="{i18n>CREDIT_CARD_STEP2_BUTTON}"
+								type="Emphasized" enabled="false" visible="false">
+								<customData>
+									<core:CustomData key="Action" value="TRV_MTE_SRV.TRV_MTE_SRV_Entities/CreateExpense"/>
+								</customData>
+							</Button>
+						</WizardStep>
+						<WizardStep id="creditCardWizard::schema::step" title="{i18n>CREDIT_CARD_STEP2_TITLE}" validated="false"></WizardStep>
+					</Wizard>
+				</content>
+			</Page>
+		</content>
+		<buttons>
+			<Button id="submitButton" enabled="false" text="{i18n>CREATE_EXPENSE}" type="Emphasized" press="handleWizardApply"/>
+			<Button id="endButton" text="{i18n>CANCEL_BUTTON}" press="handleWizardCancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

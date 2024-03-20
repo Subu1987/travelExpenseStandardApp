@@ -1,0 +1,128 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:tec="sap.fin.travel.lib.reuse.controls" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:sfi="sap.ui.comp.smartfield" xmlns:sfo="sap.ui.comp.smartform" xmlns:form="sap.ui.layout.form"
+	xmlns:smarttable="sap.ui.comp.smarttable">
+	<Dialog id="WizardSplitReceipt::Dialog" class="sapUiContentPadding" title="{i18n>WIZARD_SPLIT_RECEIPT}" stretch="true">
+		<content>
+			<Page id="page" showHeader="false">
+				<content>
+					<layout:VerticalLayout id="page::VLContainer" width="100%" class="sapUiContentPadding" visible="{= ${messageModel>/stripMessage}.length > 0}">
+						<layout:content>
+							<MessageStrip id="page::VLContainer::Msg" text="{messageModel>/stripMessage}" type="{messageModel>/stripType}" showIcon="true"></MessageStrip>
+						</layout:content>
+					</layout:VerticalLayout>
+					<Wizard showNextButton="false" id="receiptWizard">
+						<WizardStep id="page::wizard::expensetype::step" title="{i18n>RECEIPT_WIZARD_STEP1_EXPENSE_TYPE}" validated="false">
+							<sfi:SmartLabel id="page::wizard::ExpTypeName::Label" labelFor="page::wizard::ExpTypeName::Field"/>
+							<sfi:SmartField id="page::wizard::ExpTypeName::Field" change="handleWizardStep1ExpTypeChange" value="{ExpTypeName}">
+								<sfi:configuration>
+									<sfi:Configuration preventInitialDataFetchInValueHelpDialog="false" />
+								</sfi:configuration>
+							</sfi:SmartField>
+							<sfo:SmartForm id="receiptWizardSmartFormSplitData" editable="true">
+								<!-- Receipt split data-->
+								<sfo:Group id="page::wizard::expensetype::form::Group" label="{i18n>RECEIPT_WIZARD_SPLIT_DATA}">
+									<sfo:GroupElement id="page::wizard::expensetype::form::NumberForSplitting::GroupElement">
+										<sfi:SmartField id="page::wizard::expensetype::form::NumberForSplitting::Field" value="{NumberForSplitting}"
+											textLabel="{i18n>NUMBER_FOR_SPLITTING}"/>
+									</sfo:GroupElement>
+									<!-- amount to be splitted -->
+									<sfo:GroupElement id="page::wizard::expensetype::form::RecAmount::GroupElement">
+										<sfi:SmartField id="page::wizard::expensetype::form::RecAmount::Field" value="{RecAmount}"/>
+										<sfi:SmartField id="page::wizard::expensetype::form::AmountForAllItems::Field" value="{AmountForAllItems}"/>
+									</sfo:GroupElement>
+									<!-- new receipt date -->
+									<sfo:GroupElement id="page::wizard::expensetype::form::RecDate::GroupElement">
+										<sfi:SmartField id="page::wizard::expensetype::form::RecDate::Field" value="{RecDate}"/>
+									</sfo:GroupElement>
+									<sfo:GroupElement id="page::wizard::expensetype::form::AdaptReceiptDate::GroupElement">
+										<sfi:SmartField id="page::wizard::expensetype::form::AdaptReceiptDate::Field" value="{AdaptReceiptDate}"
+											textLabel="{i18n>ADJUST_RECEIPT_DATE}"/>
+									</sfo:GroupElement>
+									<sfo:GroupElement id="page::wizard::expensetype::form::AdaptFromDateToDate::GroupElement">
+										<sfi:SmartField id="page::wizard::expensetype::form::AdaptFromDateToDate::Field" value="{AdaptFromDateToDate}"
+											textLabel="{i18n>ADJUST_FROM_DATE_TO_DATE}"/>
+									</sfo:GroupElement>
+								</sfo:Group>
+							</sfo:SmartForm>
+							<Button id="step2Button" press="handleWizardStep1ExpTypeComplete" text="{i18n>RECEIPT_WIZARD_STEP2}" type="Emphasized"/>
+						</WizardStep>
+						<WizardStep id="page::wizard::receiptdetail::step" title="{i18n>RECEIPT_WIZARD_STEP2_RECEIPT_DETAILS}" validated="false">
+							<sfo:SmartForm id="receiptWizardSmartFormReceiptData" editable="true">
+								<sfo:Group id="page::wizard::receiptdetail::form::Group" label="{i18n>RECEIPT_WIZARD_RECEIPT_DETAILS}">
+									<core:Fragment fragmentName="fin.travel.mytravelexpensesv2.view.fragments.WizardSplitReceiptDialogReceiptsInfo" type="XML"/>
+								</sfo:Group>
+							</sfo:SmartForm>
+						</WizardStep>
+						<WizardStep id="page::wizard::vatdetail::step" title="{i18n>RECEIPT_WIZARD_VAT_DETAILS}" validated="false">
+							<sfo:SmartForm id="receiptWizardSmartFormVatData" editable="true">
+								<sfo:Group id="page::wizard::vatdetail::form::Group" label="{i18n>RECEIPT_WIZARD_VAT_DETAILS}">
+									<core:Fragment fragmentName="fin.travel.mytravelexpensesv2.view.fragments.WizardSplitReceiptDialogVATDetails" type="XML"/>
+								</sfo:Group>
+							</sfo:SmartForm>
+						</WizardStep>
+						<WizardStep id="page::wizard::fligthdetail::step" title="{i18n>RECEIPT_WIZARD_FLIGHT_DETAILS}" validated="false">
+							<sfo:SmartForm id="receiptWizardSmartFormFlightData" editable="true">
+								<sfo:Group id="page::wizard::fligthdetail::form::Group" label="{i18n>RECEIPT_WIZARD_FLIGHT_DETAILS}">
+									<core:Fragment fragmentName="fin.travel.mytravelexpensesv2.view.fragments.WizardSplitReceiptDialogFlightInfo" type="XML"/>
+								</sfo:Group>
+							</sfo:SmartForm>
+						</WizardStep>
+						<WizardStep id="page::wizard::vendordetail::step" title="{i18n>RECEIPT_WIZARD_VENDOR_DETAILS}" validated="false">
+							<sfo:SmartForm id="receiptWizardSmartFormVendorData" editable="true">
+								<sfo:Group id="page::wizard::vendordetail::form::Group" label="{i18n>RECEIPT_WIZARD_VENDOR_DETAILS}">
+									<core:Fragment fragmentName="fin.travel.mytravelexpensesv2.view.fragments.WizardSplitReceiptDialogVendor" type="XML"/>
+								</sfo:Group>
+							</sfo:SmartForm>
+						</WizardStep>
+						<!-- attendees, products, etc. -->
+						<WizardStep id="page::wizard::attendees::step" title="{i18n>RECEIPT_WIZARD_STEP3_ATTENDEES}"
+							icon="sap-icon://BusinessSuiteInAppSymbols/icon-business-partner" validated="false">
+							<smarttable:SmartTable id="ReceiptWizardAttendeesTable" beforeRebindTable="handleWizardReceiptBeforeRebindTable" showRowCount="true"
+								tableType="ResponsiveTable" useVariantManagement="false" useExportToExcel="false" entitySet="Attendees" enableAutoBinding="true"
+								tableBindingPath="Attendees" demandPopin="true">
+								<smarttable:customToolbar>
+									<OverflowToolbar id="page::wizard::attendees::OverflowToolbar" design="Transparent">
+										<ToolbarSpacer id="page::wizard::attendees::ToolbarSpacer"/>
+										<!-- Custom Action Breakout -->
+										<Button id="page::wizard::attendees::delete" type="Transparent" icon="sap-icon://delete" tooltip="{i18n>DELETE_BUTTON}"
+											press="handleDeleteParticipants"/>
+										<OverflowToolbarButton id="page::wizard::attendees::add" icon="sap-icon://add" press="handleWizardReceiptCreateParticipantAction"
+											tooltip="{i18n>ADD_BUTTON}"/>
+									</OverflowToolbar>
+								</smarttable:customToolbar>
+								<Table id="page::wizard::attendees::table" growing="true" mode="MultiSelect" growingThreshold="15"/>
+							</smarttable:SmartTable>
+						</WizardStep>
+						<WizardStep id="page::wizard::products::step" title="{i18n>RECEIPT_WIZARD_STEP4_PRODUCTS}"
+							icon="sap-icon://BusinessSuiteInAppSymbols/icon-products" validated="false">
+							<smarttable:SmartTable id="ReceiptWizardProductsTable" beforeRebindTable="handleWizardReceiptBeforeRebindTable" showRowCount="true"
+								tableType="ResponsiveTable" useVariantManagement="false" useExportToExcel="false" entitySet="Products" enableAutoBinding="true"
+								tableBindingPath="Products" demandPopin="true">
+								<smarttable:customToolbar>
+									<OverflowToolbar id="page::wizard::products::OverflowToolbar" design="Transparent">
+										<ToolbarSpacer id="page::wizard::products::ToolbarSpacer"/>
+										<!-- Custom Action Breakout -->
+										<Button id="page::wizard::products::delete" type="Transparent" icon="sap-icon://delete" tooltip="{i18n>DELETE_BUTTON}"
+											press="handleDeleteProducts"/>
+										<OverflowToolbarButton id="page::wizard::products::add" icon="sap-icon://add" press="handleWizardReceiptCreateProductAction"
+											tooltip="{i18n>ADD_BUTTON}"/>
+									</OverflowToolbar>
+								</smarttable:customToolbar>
+								<Table id="page::wizard::products::table" growing="true" mode="MultiSelect" growingThreshold="15"/>
+							</smarttable:SmartTable>
+						</WizardStep>
+					</Wizard>
+				</content>
+			</Page>
+		</content>
+		<buttons>
+			<Button enabled="false" id="receiptWizardButtonApply" text="{i18n>APPLY_BUTTON}" type="Emphasized" press="handleWizardApply"/>
+			<Button id="receiptWizardButtonCancel" text="{i18n>CANCEL_BUTTON}" press="handleWizardCancel"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

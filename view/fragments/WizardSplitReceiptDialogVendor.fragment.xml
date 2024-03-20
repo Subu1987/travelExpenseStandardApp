@@ -1,0 +1,29 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SeName::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SeName::Field" value="{SeName}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SeStreet::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SeStreet::Field" value="{SeStreet}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SeCity::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SeCity::Field" value="{SeCity}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SeStateProvince::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SeStateProvince::Field" value="{SeStateProvince}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SeCountry::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SeCountry::Field" value="{SeCountry}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SePostalCode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SePostalCode::Field" value="{SePostalCode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::Vendor::SeCustomerServicePhone::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::Vendor::SeCustomerServicePhone::Field" value="{SeCustomerServicePhone}"/>
+	</sfo:GroupElement>
+</core:FragmentDefinition>

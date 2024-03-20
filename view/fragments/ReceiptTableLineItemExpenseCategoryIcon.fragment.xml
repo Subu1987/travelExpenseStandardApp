@@ -1,0 +1,13 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:tec="sap.fin.travel.lib.reuse.controls">
+		<core:Icon id="CategoryIcon" src="{parts:[{path: 'Category'}], formatter: '.getIconForExpenseTypeCategory'}"
+			visible="true"
+			decorative="false"
+			tooltip="{CategoryName}" alt="{CategoryName}"/>
+
+</core:FragmentDefinition>

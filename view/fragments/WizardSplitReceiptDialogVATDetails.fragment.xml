@@ -1,0 +1,50 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::VatRegNo::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::VatRegNo::Field" value="{VatRegNo}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::VatRegNoNat::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::VatRegNoNat::Field" value="{VatRegNoNat}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::Name::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::Name::Field" value="{Name}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::Street::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::Street::Field" value="{Street}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::HouseNum::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::HouseNum::Field" value="{HouseNum}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::PostCode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::PostCode::Field" value="{PostCode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::City::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::City::Field" value="{City}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::ReceiptNo::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::ReceiptNo::Field" value="{ReceiptNo}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::ReceiptItem::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::ReceiptItem::Field" value="{ReceiptItem}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::VatAmount::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::VatAmount::Field" value="{VatAmount}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::TaxCode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::TaxCode::Field" value="{TaxCode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::VatServiceCode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::VatServiceCode::Field" value="{VatServiceCode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::VatSubSrvCode::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::VatSubSrvCode::Field" value="{VatSubSrvCode}"/>
+	</sfo:GroupElement>
+	<sfo:GroupElement id="WizardSplitReceipt::VATDetail::VatServiceDesc::GroupElement">
+		<sfi:SmartField id="WizardSplitReceipt::VATDetail::VatServiceDesc::Field" value="{VatServiceDesc}"/>
+	</sfo:GroupElement>
+</core:FragmentDefinition>

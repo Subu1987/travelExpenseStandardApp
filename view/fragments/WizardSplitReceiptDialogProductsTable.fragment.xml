@@ -1,0 +1,15 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:sfo="sap.ui.comp.smartform" xmlns:sfi="sap.ui.comp.smartfield">
+	<ColumnListItem>
+		<cells>
+			<sfi:SmartField value="{ProductId}"/>
+			<sfi:SmartField value="{ProductName}"/>
+			<sfi:SmartField value="{ProductCat}"/>
+			<sfi:SmartField value="{PrdDrugCode}"/>
+		</cells>
+	</ColumnListItem>
+</core:FragmentDefinition>

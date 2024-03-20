@@ -1,0 +1,46 @@
+<!--
+
+    Copyright (C) 2009-2022 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:sfi="sap.ui.comp.smartfield"
+	xmlns:trvlib="sap.fin.travel.lib.reuse.controls" xmlns:uxap="sap.uxap" xmlns:sfo="sap.ui.comp.smartform">
+	<uxap:blocks>
+		<sfo:SmartForm id="PerDiem::SmartForm">
+			<sfo:layout>
+				<sfo:Layout columnsM="2" columnsL="2" columnsXL="2" labelSpanS="12" labelSpanM="12" labelSpanL="12" labelSpanXL="12"
+					singleGroupFullSize="false"/>
+			</sfo:layout>
+			<sfo:Group id="PerDiem::Meals::Group" visible="{= ${PdMealsFc} > 0}" label="{i18n>PER_DIEM_MEALS}">
+				<sfo:GroupElement id="PerDiem::Meals::GroupElement">
+					<Switch id="PerDiem::Meals::Switch" enabled="{= !${EditVisible} &amp;&amp; ${PdMealsFc} > 1 }" state="{PdMeals}">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Switch>
+				</sfo:GroupElement>
+				<sfo:GroupElement id="PerDiem::Food::GroupElement">
+					<sfi:SmartLabel id="PerDiem::Food::Label" labelFor="pdFood"/>
+					<sfi:SmartField uomEditable="false" id="pdFood" value="{PdFood}"/>
+				</sfo:GroupElement>
+			</sfo:Group>
+			<sfo:Group id="PerDiem::Accom::Group" visible="{= ${PdAccomFc} > 0}" label="{i18n>PER_DIEM_ACCOMODATIONS}">
+				<sfo:GroupElement id="PerDiem::Accom::GroupElement">
+					<Switch id="PerDiem::Accom::Switch" enabled="{= !${EditVisible} &amp;&amp; ${PdAccomFc} > 1}" state="{PdAccom}">
+						<layoutData>
+							<FlexItemData growFactor="1"/>
+						</layoutData>
+					</Switch>
+				</sfo:GroupElement>
+				<sfo:GroupElement id="PerDiem::Housing::GroupElement">
+					<sfi:SmartLabel id="PerDiem::Housing::Label" labelFor="pdHousing"/>
+					<sfi:SmartField uomEditable="false" id="pdHousing" value="{PdHousing}"/>
+				</sfo:GroupElement>
+			</sfo:Group>
+		</sfo:SmartForm>
+	</uxap:blocks>
+	<uxap:actions>
+		<Button id="PerDiem::ViewDeduction" visible="{= !${HiddenPdDeductions}}" enabled="{= ${PdMeals} || ${PdAccom} }"
+			text="{= ${EditVisible} ? ${i18n>PD_VIEW_DEDUCTION} : ${i18n>PD_ENTER_DEDUCTION}}" type="Transparent" press="onPerDiemDeductionPress"/>
+	</uxap:actions>
+</core:FragmentDefinition>
